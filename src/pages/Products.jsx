@@ -26,13 +26,15 @@ const Products = () => {
             <Navbar />
             <h1>Products</h1>
 
-            <div className="products">
+            <div className="products-container">
                 {products.map((product) => (
-                    <div key={product.id} className="product">
-                        <h2>{product.title}</h2>
-                        <img src={product.image} alt={product.title} />
-                        <p>{product.description}</p>
-                        <p>Price: ${product.price}</p>
+                    <div key={product.id} className="product-card">
+                        <img src={product.image} alt={product.title} className="product-image" />
+                        <div className="product-info">
+                            <h3 className="product-title">{product.title}</h3>
+                            <p className="product-price">{`$ ${product.price.toFixed(2)}`}</p>
+                            <a href="#" className="product-button">Buy Now</a>
+                        </div>
                     </div>
                 ))}
             </div>
