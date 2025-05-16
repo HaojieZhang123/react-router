@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import { useNavigate } from 'react-router-dom'
+
 const ProductDetail = () => {
 
     // get the id from the url
@@ -28,6 +30,9 @@ const ProductDetail = () => {
         fetchSingleProduct()
     }, [id])
 
+    // navigate to the products page
+    const navigate = useNavigate()
+
     return (
         <>
             <h1>Product Detail #{id}</h1>
@@ -40,6 +45,15 @@ const ProductDetail = () => {
                     <p className="product-detail-description">{singleProduct.description}</p>
                     <p className="product-detail-price">{`$ ${singleProduct.price}`}</p>
                 </div>
+            </div>
+
+            <div className="product-navigation-container">
+                <button className="product-navigation-button" onClick={() => navigate('/products/' + (parseInt(id) - 1))} disabled={id <= 1}>
+                    Previous
+                </button>
+                <button className="product-navigation-button" onClick={() => navigate('/products/' + (parseInt(id) + 1))}>
+                    Next
+                </button>
             </div>
         </>
     )

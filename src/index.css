@@ -184,3 +184,36 @@ nav li {
     font-weight: bold;
     margin-top: 1rem;
 }
+
+.product-navigation-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.product-navigation-button {
+    padding: 0.7rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    outline: none;
+}
+
+.product-navigation-button:hover:not(:disabled) {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.product-navigation-button:disabled {
+    background-color: #bbb;
+    color: #eee;
+    cursor: not-allowed;
+    box-shadow: none;
+}
