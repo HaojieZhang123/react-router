@@ -26,6 +26,14 @@ const Products = () => {
             <h1>Products</h1>
 
             <div className="products-container">
+
+                {/* loading when the data is being fetched */}
+                {products.length === 0 && (
+                    <div className="loading">
+                        <p>Loading...</p>
+                    </div>
+                )}
+
                 {products.map((product) => (
                     <div key={product.id} className="product-card">
                         <img src={product.image} alt={product.title} className="product-image" />

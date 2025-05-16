@@ -16,6 +16,7 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
+/* header navbar */
 header {
     background-color: #333;
     padding: 1rem 0;
@@ -49,6 +50,8 @@ nav li {
 .navbar-link:hover {
     color: #f39c12;
 }
+
+/* products */
 
 .products-container {
     display: flex;
@@ -114,4 +117,70 @@ nav li {
 
 .product-button:hover {
     background-color: #f39c12;
+}
+
+/* product detail */
+
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.product-detail-image {
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.product-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.product-detail-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.product-detail-category {
+    font-size: 1rem;
+    color: #888;
+    background: #f3f3f3;
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 16px;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.product-detail-description {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.product-detail-price {
+    font-size: 1.5rem;
+    color: #f39c12;
+    font-weight: bold;
+    margin-top: 1rem;
 }

@@ -8,13 +8,14 @@ const ProductDetail = () => {
     const { id } = useParams()
 
     // state to hold the product data
-    const [product, setProduct] = useState({})
+    const [singleProduct, setSingleProduct] = useState('')
 
     // function to fetch the product data
-    const fetchProduct = () => {
+    const fetchSingleProduct = () => {
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then((response) => {
-                setProduct(response.data)
+                setSingleProduct(response.data)
+                console.log(response.data)
             })
             .catch((error) => {
                 console.error('Error fetching product:', error)
@@ -24,11 +25,23 @@ const ProductDetail = () => {
     // useEffect to fetch the product data when the component mounts
     // and when the id changes
     useEffect(() => {
-        fetchProduct()
+        fetchSingleProduct()
     }, [id])
 
     return (
-        <h1>Product Detail #{id}</h1>
+        <>
+            <h1>Product Detail #{id}</h1>
+
+            <div className="product-detail-container">
+                <img src={singleProduct.image} alt={singleProduct.title} className="product-detail-image" />
+                <div className="product-detail-info">
+                    <h3 className="product-detail-title">{singleProduct.title}</h3>
+                    <p className="product-detail-category">{singleProduct.category}</p>
+                    <p className="product-detail-description">{singleProduct.description}</p>
+                    <p className="product-detail-price">{`$ ${singleProduct.price}`}</p>
+                </div>
+            </div>
+        </>
     )
 }
 
