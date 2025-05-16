@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Products = () => {
 
@@ -31,7 +32,9 @@ const Products = () => {
                         <div className="product-info">
                             <h3 className="product-title">{product.title}</h3>
                             <p className="product-price">{`$ ${product.price.toFixed(2)}`}</p>
-                            <a href="#" className="product-button">Buy Now</a>
+                            <NavLink to={`/products/${product.id}`} className="product-button">
+                                View Details
+                            </NavLink>
                         </div>
                     </div>
                 ))}
